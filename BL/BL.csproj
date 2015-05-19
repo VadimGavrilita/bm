@@ -43,9 +43,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Interfases\Interfases.csproj">
+    <ProjectReference Include="..\Interfases\Contracts.csproj">
       <Project>{9534a753-8682-4da0-9c60-bd3b01ec9092}</Project>
-      <Name>Interfases</Name>
+      <Name>Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -168,6 +168,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Modules\AuthHttpModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -295,9 +296,9 @@
       <Project>{6530f692-a999-4d6a-a9bf-58ad335fe115}</Project>
       <Name>BL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Interfases\Interfases.csproj">
+    <ProjectReference Include="..\Interfases\Contracts.csproj">
       <Project>{9534A753-8682-4DA0-9C60-BD3B01EC9092}</Project>
-      <Name>Interfases</Name>
+      <Name>Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
