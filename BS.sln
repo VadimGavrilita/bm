@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{6530
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BS Site", "BM Site\BS Site.csproj", "{4592D251-B258-4875-BD61-3B36528E8D96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyResolver", "DependencyResolver\DependencyResolver.csproj", "{1FD857ED-0822-481C-A2A0-BFFC5CB2994E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectModels", "ObjectModels\ObjectModels.csproj", "{F750F23B-B14C-4ABD-ADAD-8F275250894F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{4592D251-B258-4875-BD61-3B36528E8D96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4592D251-B258-4875-BD61-3B36528E8D96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4592D251-B258-4875-BD61-3B36528E8D96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FD857ED-0822-481C-A2A0-BFFC5CB2994E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FD857ED-0822-481C-A2A0-BFFC5CB2994E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FD857ED-0822-481C-A2A0-BFFC5CB2994E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FD857ED-0822-481C-A2A0-BFFC5CB2994E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F750F23B-B14C-4ABD-ADAD-8F275250894F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F750F23B-B14C-4ABD-ADAD-8F275250894F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F750F23B-B14C-4ABD-ADAD-8F275250894F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F750F23B-B14C-4ABD-ADAD-8F275250894F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

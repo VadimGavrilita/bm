@@ -30,6 +30,15 @@ namespace BS.Areas.HelpPage
             XPathDocument xpath = new XPathDocument(documentPath);
             _documentNavigator = xpath.CreateNavigator();
         }
+        public virtual string GetDocumentation(HttpControllerDescriptor controllerDescriptor)
+        {
+            return "";
+        }
+
+        public virtual string GetResponseDocumentation(HttpActionDescriptor actionDescriptor)
+        {
+            return "";
+        }
 
         public virtual string GetDocumentation(HttpActionDescriptor actionDescriptor)
         {

@@ -39,13 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookRepository.cs" />
+    <Compile Include="AdoBookRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Interfases\Contracts.csproj">
       <Project>{9534a753-8682-4da0-9c60-bd3b01ec9092}</Project>
       <Name>Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectModels\ObjectModels.csproj">
+      <Project>{F750F23B-B14C-4ABD-ADAD-8F275250894F}</Project>
+      <Name>ObjectModels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
