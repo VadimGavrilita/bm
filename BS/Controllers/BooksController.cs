@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.Serialization;
 using System.Web.Http;
 using Interfases.BL;
 using Interfases.OM;
 using Interfases.Utils;
+using ObjectModels;
 
 namespace BS.Controllers
 {
@@ -21,10 +23,10 @@ namespace BS.Controllers
         }
 
         // GET api/values
-        public IEnumerable<IBook> Get(IPaginationData paginationData)
+        public IEnumerable<Book> Get(IPaginationData paginationData)
         {
             var books = _bookManager.GetAll(paginationData);
-            return books;
+            return books as IEnumerable<Book>;
         }
 
         // GET api/values/5

@@ -2,12 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Http;
+using System.Web.Http.Dependencies;
+using BS.App_Start;
 using DependencyResolver;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
+using Ninject.Activation;
 using Ninject.Modules;
+using Ninject.Syntax;
 using Ninject.Web.Common;
+using Ninject.Parameters;
 
+
+
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NinjectWebCommon), "Stop")]
 namespace BS.App_Start
 {
     public class NinjectWebCommon
@@ -43,6 +53,7 @@ namespace BS.App_Start
             kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
             RegisterServices(kernel);
+            GlobalConfiguration.Configuration.DependencyResolver = new NinjectResolver(kernel);
             return kernel;
         }
 
@@ -54,5 +65,43 @@ namespace BS.App_Start
         {
             kernel.Load(new INinjectModule[] { new BusinessLayerModule(), new DataAccessModule() });
         }        
+    }
+    public class NinjectResolver : NinjectScope, IDependencyResolver
+    {
+        private readonly IKernel _kernel;
+        public NinjectResolver(IKernel kernel)
+            : base(kernel)
+        {
+            _kernel = kernel;
+        }
+        public IDependencyScope BeginScope()
+        {
+            return new NinjectScope(_kernel.BeginBlock());
+        }
+    }
+
+    public class NinjectScope : IDependencyScope
+    {
+        protected IResolutionRoot resolutionRoot;
+        public NinjectScope(IResolutionRoot kernel)
+        {
+            resolutionRoot = kernel;
+        }
+        public object GetService(Type serviceType)
+        {
+            IRequest request = resolutionRoot.CreateRequest(serviceType, null, new Parameter[0], true, true);
+            return resolutionRoot.Resolve(request).SingleOrDefault();
+        }
+        public IEnumerable<object> GetServices(Type serviceType)
+        {
+            IRequest request = resolutionRoot.CreateRequest(serviceType, null, new Parameter[0], true, true);
+            return resolutionRoot.Resolve(request).ToList();
+        }
+        public void Dispose()
+        {
+            IDisposable disposable = (IDisposable)resolutionRoot;
+            if (disposable != null) disposable.Dispose();
+            resolutionRoot = null;
+        }
     }
 }
