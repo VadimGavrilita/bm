@@ -1,33 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Interfases.DL;
 using Interfases.OM;
 using Interfases.Utils;
 
-namespace Ado.net_BL
+namespace XML_Data_Layer
 {
-    public class AdoBookRepository : IBookRepository
+    class XmlBookRepository : IBookRepository
     {
         public IEnumerable<Book> GetAll(IPaginationData param)
         {
-            return new List<Book>
-            {
-                new Book
-                {
-                    Code = "TestCode",
-                    Name = "Somename"
-                },
-                new Book
-                {
-                    Code = "TestCode",
-                    Name = "Somename"
-                },
-                new Book
-                {
-                    Code = "TestCode",
-                    Name = "Somename"
-                },
-            };
+            throw new NotImplementedException();
         }
 
         public Book Get(int id)

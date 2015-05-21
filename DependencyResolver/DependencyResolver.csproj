@@ -47,9 +47,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ado.net BL\Ado.net Data Layer.csproj">
+    <ProjectReference Include="..\Ado.net BL\DAL ADO.NET.csproj">
       <Project>{AD9831DE-8C65-459A-B5F7-D250936BD114}</Project>
-      <Name>Ado.net Data Layer</Name>
+      <Name>DAL ADO.NET</Name>
     </ProjectReference>
     <ProjectReference Include="..\BL\BL.csproj">
       <Project>{6530F692-A999-4D6A-A9BF-58AD335FE115}</Project>
@@ -58,6 +58,10 @@
     <ProjectReference Include="..\Interfases\Contracts.csproj">
       <Project>{9534A753-8682-4DA0-9C60-BD3B01EC9092}</Project>
       <Name>Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MOCK Data Layer\DAL MOCK.csproj">
+      <Project>{A3ACEA77-AB33-4C85-A72B-D01BC6F6BB08}</Project>
+      <Name>DAL MOCK</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

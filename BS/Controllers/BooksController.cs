@@ -8,7 +8,6 @@ using System.Web.Http;
 using Interfases.BL;
 using Interfases.OM;
 using Interfases.Utils;
-using ObjectModels;
 
 namespace BS.Controllers
 {
@@ -26,31 +25,33 @@ namespace BS.Controllers
         public IEnumerable<Book> Get(IPaginationData paginationData)
         {
             var books = _bookManager.GetAll(paginationData);
-            return books as IEnumerable<Book>;
+            return books;
         }
 
         // GET api/values/5
-        public IBook Get(int id)
+        public Book Get(int id)
         {
             var book = _bookManager.Get(id);
             return book;
         }
 
         // POST api/values
-        public HttpResponseMessage Post([FromBody]IBook book)
+        public HttpResponseMessage Post([FromBody]Book book)
         {
             book.Id = _bookManager.Insert(book);
-            return Request.CreateResponse<IBook>(HttpStatusCode.Created, book);
+            return Request.CreateResponse<Book>(HttpStatusCode.Created, book);
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]IBook value)
+        public void Put(int id, [FromBody]Book value)
         {
+            _bookManager.Update(value);
         }
 
         // DELETE api/values/5
         public void Delete(int id)
         {
+            _bookManager.Delete(id);
         }
     }
 }

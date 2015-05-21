@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9534A753-8682-4DA0-9C60-BD3B01EC9092}</ProjectGuid>
+    <ProjectGuid>{DEBB7549-CCF9-49E5-8053-DC2A7D95AEF9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Interfases</RootNamespace>
-    <AssemblyName>Interfases</AssemblyName>
+    <RootNamespace>XML_Data_Layer</RootNamespace>
+    <AssemblyName>XML Data Layer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,23 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL\IAuthorManager.cs" />
-    <Compile Include="BL\IBookManager.cs" />
-    <Compile Include="BL\IOrderManager.cs" />
-    <Compile Include="BL\IUserManager.cs" />
-    <Compile Include="DL\IBookRepository.cs" />
-    <Compile Include="Utils\ICrudMethods.cs" />
-    <Compile Include="Utils\IPaginationData.cs" />
-    <Compile Include="OM\Author.cs" />
-    <Compile Include="OM\Book.cs" />
-    <Compile Include="OM\Country.cs" />
-    <Compile Include="OM\Customer.cs" />
-    <Compile Include="OM\Location.cs" />
-    <Compile Include="OM\Order.cs" />
-    <Compile Include="OM\Shop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlBookRepository.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Interfases\Contracts.csproj">
+      <Project>{9534A753-8682-4DA0-9C60-BD3B01EC9092}</Project>
+      <Name>Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9534A753-8682-4DA0-9C60-BD3B01EC9092}</ProjectGuid>
+    <ProjectGuid>{AD9831DE-8C65-459A-B5F7-D250936BD114}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Interfases</RootNamespace>
-    <AssemblyName>Interfases</AssemblyName>
+    <RootNamespace>Ado.net_BL</RootNamespace>
+    <AssemblyName>Ado.net BL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,23 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL\IAuthorManager.cs" />
-    <Compile Include="BL\IBookManager.cs" />
-    <Compile Include="BL\IOrderManager.cs" />
-    <Compile Include="BL\IUserManager.cs" />
-    <Compile Include="DL\IBookRepository.cs" />
-    <Compile Include="Utils\ICrudMethods.cs" />
-    <Compile Include="Utils\IPaginationData.cs" />
-    <Compile Include="OM\Author.cs" />
-    <Compile Include="OM\Book.cs" />
-    <Compile Include="OM\Country.cs" />
-    <Compile Include="OM\Customer.cs" />
-    <Compile Include="OM\Location.cs" />
-    <Compile Include="OM\Order.cs" />
-    <Compile Include="OM\Shop.cs" />
+    <Compile Include="AdoBookRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Interfases\Contracts.csproj">
+      <Project>{9534a753-8682-4da0-9c60-bd3b01ec9092}</Project>
+      <Name>Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

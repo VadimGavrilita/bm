@@ -64,6 +64,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
     </Reference>
+    <Reference Include="MoreLinq">
+      <HintPath>..\packages\morelinq.1.1.1\lib\net35\MoreLinq.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -319,10 +322,6 @@
     <ProjectReference Include="..\Interfases\Contracts.csproj">
       <Project>{9534A753-8682-4DA0-9C60-BD3B01EC9092}</Project>
       <Name>Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ObjectModels\ObjectModels.csproj">
-      <Project>{F750F23B-B14C-4ABD-ADAD-8F275250894F}</Project>
-      <Name>ObjectModels</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

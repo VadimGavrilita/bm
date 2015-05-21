@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ado.net_BL;
-using BL;
-using Interfases.BL;
-using Interfases.DL;
+﻿using Interfases.DL;
+using MOCK_Data_Layer;
 using Ninject.Modules;
 
 namespace DependencyResolver
@@ -15,7 +8,7 @@ namespace DependencyResolver
     {
         public override void Load()
         {
-            Bind<IBookRepository>().To<AdoBookRepository>();
+            Bind<IBookRepository>().To<MockBookRepository>();
         }
     }
 }

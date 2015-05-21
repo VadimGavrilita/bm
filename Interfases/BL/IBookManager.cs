@@ -7,7 +7,7 @@ using Interfases.Utils;
 
 namespace Interfases.BL
 {
-    public interface IBookManager : ICrudMethods<IBook>
+    public interface IBookManager : ICrudMethods<Book>
     {
     }
 }

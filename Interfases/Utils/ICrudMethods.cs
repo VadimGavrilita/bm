@@ -7,7 +7,8 @@ namespace Interfases.Utils
     {
         IEnumerable<T> GetAll(IPaginationData param);
         T Get(int id);
-        int Insert(T type);
-        bool Update(T type);
+        int Insert(T instance);
+        bool Update(T instance);
+        bool Delete(int id);
     }
 }

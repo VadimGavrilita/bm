@@ -8,7 +8,7 @@ using Interfases.Utils;
 
 namespace Interfases.DL
 {
-    public interface IBookRepository : ICrudMethods<IBook>
+    public interface IBookRepository : ICrudMethods<Book>
     {
     }
 }

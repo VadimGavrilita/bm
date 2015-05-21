@@ -11,22 +11,27 @@ namespace BL
 {
     public class BookDesctopManager : IBookManager
     {
-        public IEnumerable<IBook> GetAll(IPaginationData param)
+        public IEnumerable<Book> GetAll(IPaginationData param)
         {
             throw new NotImplementedException();
         }
 
-        public IBook Get(int id)
+        public Book Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public int Insert(IBook type)
+        public int Insert(Book type)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(IBook type)
+        public bool Update(Book type)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(Book instance)
         {
             throw new NotImplementedException();
         }
