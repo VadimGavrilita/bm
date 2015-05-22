@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Runtime.Serialization;
 using System.Web.Http;
+using Interfases.API;
 using Interfases.BL;
 using Interfases.OM;
 using Interfases.Utils;
@@ -12,7 +13,7 @@ using Interfases.Utils;
 namespace BS.Controllers
 {
     [Authorize]
-    public class BooksController : ApiController
+    public class BooksController : ApiController, ICrudApi<Book>
     {
         private readonly IBookManager _bookManager;
 
@@ -36,10 +37,11 @@ namespace BS.Controllers
         }
 
         // POST api/values
-        public HttpResponseMessage Post([FromBody]Book book)
+        public Book Post([FromBody]Book book)
         {
             book.Id = _bookManager.Insert(book);
-            return Request.CreateResponse<Book>(HttpStatusCode.Created, book);
+            return book;
+            //  return Request.CreateResponse<Book>(HttpStatusCode.Created, book);
         }
 
         // PUT api/values/5

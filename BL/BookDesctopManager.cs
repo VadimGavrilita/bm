@@ -31,7 +31,7 @@ namespace BL
             throw new NotImplementedException();
         }
 
-        public bool Delete(Book instance)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }

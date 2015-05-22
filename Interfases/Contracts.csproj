@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\ICrudApi.cs" />
     <Compile Include="BL\IAuthorManager.cs" />
     <Compile Include="BL\IBookManager.cs" />
     <Compile Include="BL\IOrderManager.cs" />
